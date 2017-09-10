@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <text class="userinfo-nickname">点击头像，查看内容，xgy</text>
+  </view>
+  <scroll-view scroll-y style="height: 400px;width: 100%">
+    <view class="usermotto" wx:for="{{notes}}">
+      <text class="motto-title">{{'title: ' + item.title+"\n"}}</text>
+      <text class="motto-body">{{'type: ' + item.type + '\n' + 'content: ' + item.content}}</text>
+    </view>
+  </scroll-view>
+</view>
