@@ -5,8 +5,15 @@
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     <text class="userinfo-nickname">点击头像，查看内容，xgy</text>
   </view>
+  <form bindsubmit='onsubmit' report-submit='true'>
+  <view class="section">
+    <view class="section__title">input</view>
+    <input name="input" placeholder="please input here" />
+  </view>
+    <button formType="submit">Submit</button>
+  </form>
   <scroll-view scroll-y style="height: 400px;width: 100%">
-    <view class="usermotto" wx:for="{{notes}}">
+    <view class="usermotto" wx:key="{{id}}" wx:for="{{notes}}">
       <text class="motto-title">{{'title: ' + item.title+"\n"}}</text>
       <text class="motto-body">{{'type: ' + item.type + '\n' + 'content: ' + item.content}}</text>
     </view>
